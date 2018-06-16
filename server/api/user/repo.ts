@@ -1,21 +1,21 @@
-import mg from 'mongoose';
-import _ from 'lodash';
+import {model, Schema} from 'mongoose';
+import {omit} from 'lodash';
 
 
-const schema = new mg.Schema({
+const schema = new Schema({
   name: String,
   age: Number
 });
 schema.set('toObject', {
   virtuals: true,
-  transform: (doc, rtn) => _.omit(rtn, ['_id'])
+  transform: (doc, rtn) => omit(rtn, ['_id'])
 });
 
 export default class UserRepo {
   Model;
 
   constructor() {
-    this.Model = mg.model('User', schema);
+    this.Model = model('User', schema);
   }
 
   getMany(filter) {

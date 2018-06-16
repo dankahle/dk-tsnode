@@ -1,8 +1,8 @@
-import express from 'express';
+import {Router} from 'express';
 import UserController from './controller';
 import UserRepo from './repo';
 
-const router = express.Router();
+const router = Router();
 export default router;
 
 const repo = new UserRepo();
