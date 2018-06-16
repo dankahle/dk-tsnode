@@ -1,5 +1,5 @@
-const mg = require('mongoose'),
-  _ = require('lodash');
+import mg from 'mongoose';
+import _ from 'lodash';
 
 
 const schema = new mg.Schema({
@@ -11,7 +11,8 @@ schema.set('toObject', {
   transform: (doc, rtn) => _.omit(rtn, ['_id'])
 });
 
-module.exports = class UserRepo {
+export default class UserRepo {
+  Model;
 
   constructor() {
     this.Model = mg.model('User', schema);

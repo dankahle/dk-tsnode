@@ -1,9 +1,9 @@
-const express = require('express'),
-  userRouter = require('./api/user/router'),
-  mg = require('mongoose'),
-  port = process.env.PORT || 3000,
-  bodyParser = require('body-parser');
+import express from 'express';
+import userRouter from './api/user/router';
+import mg from 'mongoose';
+import bodyParser from 'body-parser';
 
+const port = process.env.PORT || 3000;
 
 mg.connect('mongodb://localhost:27017/tsnode')
   .then(() => {

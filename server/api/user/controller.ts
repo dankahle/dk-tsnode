@@ -1,11 +1,9 @@
-const UserRepo = require('./repo');
+import UserRepo from './repo';
 
 
+ export default class UserController {
 
-module.exports = class UserController {
-
-  constructor(repo) {
-    this.repo = repo;
+  constructor(private repo: UserRepo) {
   }
 
   getMany(req, res, next) {
