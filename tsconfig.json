@@ -16,11 +16,12 @@
         },
 
       "lib": ["es6"],
-      "types": ["reflect-metadata", "node"],
+      "types": ["reflect-metadata", "node", "jasmine"],
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true
     },
     "include": [
-        "server/**/*"
+        "server/**/*",
+        "spec/**/*"
     ]
 }
