@@ -1,7 +1,6 @@
 import {model, Schema} from 'mongoose';
 import {omit} from 'lodash';
 import {injectable} from 'inversify';
-import container from '../../inversify.config';
 
 
 const schema = new Schema({

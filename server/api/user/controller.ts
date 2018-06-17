@@ -1,6 +1,5 @@
 import UserRepo from './repo';
 import {inject, injectable} from 'inversify';
-import container from '../../inversify.config';
 
 @injectable()
 export default class UserController {
