@@ -1,5 +1,6 @@
 import UserRepo from './repo';
 import {inject, injectable} from 'inversify';
+import {Request} from 'express';
 
 @injectable()
 export default class UserController {
@@ -7,7 +8,7 @@ export default class UserController {
   constructor(private repo: UserRepo) {
   }
 
-  getMany(req, res, next) {
+  getMany(req: Request, res, next) {
     this.repo.getMany(req.query)
       .then(items => res.send(items))
       .catch(next);

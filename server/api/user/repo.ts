@@ -21,22 +21,26 @@ export default class UserRepo {
   }
 
   getMany(filter) {
-    return this.Model.find(filter).exec();
+    return this.Model.find(filter).exec()
+      .then(docs => docs.map(doc => doc.toObject()))
   }
 
   getOne(id) {
     return this.Model.findById(id).exec()
+      .then(doc => doc.toObject());
   }
 
   add(data) {
-    return new this.Model(data).save();
+    return new this.Model(data).save()
+      .then(doc => doc.toObject());
   }
 
   update(id, data) {
     return this.Model.findById(id).exec()
       .then(doc => {
         doc = Object.assign(doc, data);
-        return doc.save();
+        return doc.save()
+          .then(doc => doc.toObject());
       })
   }
 
@@ -45,7 +49,7 @@ export default class UserRepo {
       .then(doc => {
         if (doc) {
           return this.Model.remove({_id: id})
-            .then(() => doc)
+            .then(() => doc.toObject())
         } else {
           return Promise.resolve();
         }
