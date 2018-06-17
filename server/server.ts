@@ -1,8 +1,10 @@
 import container from './inversify.config';
+const val = container;
 import userRouter from './api/user/router';
 import express from 'express';
 import mg from 'mongoose';
 import bodyParser from 'body-parser';
+
 
 const port = process.env.PORT || 3000;
 

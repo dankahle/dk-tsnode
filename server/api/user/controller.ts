@@ -1,11 +1,13 @@
 import UserRepo from './repo';
 import {inject, injectable} from 'inversify';
 import {Request} from 'express';
+import {ControllerBase} from './controller-base';
 
 @injectable()
-export default class UserController {
+export default class UserController extends ControllerBase {
 
-  constructor(private repo: UserRepo) {
+  constructor(repo: UserRepo) {
+    super(repo, 'lala');
   }
 
   getMany(req: Request, res, next) {
@@ -14,11 +16,13 @@ export default class UserController {
       .catch(next);
   }
 
+/*
   getOne(req, res, next) {
-    this.repo.getOne(req.params.id)
+    return this.repo.getOne(req.params.id)
       .then(item => res.send(item))
       .catch(next);
   }
+*/
 
   handlePost(req, res, next) {
     if (req.query.queryPost) {

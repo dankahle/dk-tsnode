@@ -11,7 +11,8 @@
     "serve": "node dist/server.js",
     "placeholder": "node $NODE_DEBUG_OPTION somefile",
     "test": "jasmine",
-    "lint": "tslint -c tslint.json -p tsconfig.json"
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
