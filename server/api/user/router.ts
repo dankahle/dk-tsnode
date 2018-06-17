@@ -1,12 +1,11 @@
 import {Router} from 'express';
 import UserController from './controller';
-import UserRepo from './repo';
+import container from '../../inversify.config';
 
 const router = Router();
 export default router;
 
-const repo = new UserRepo();
-const ctrl = new UserController(repo);
+const ctrl = container.get(UserController);
 
 router.get('/', ctrl.getMany.bind(ctrl));
 router.get('/:id', ctrl.getOne.bind(ctrl));

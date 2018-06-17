@@ -1,5 +1,7 @@
 import {model, Schema} from 'mongoose';
 import {omit} from 'lodash';
+import {injectable} from 'inversify';
+import container from '../../inversify.config';
 
 
 const schema = new Schema({
@@ -11,6 +13,7 @@ schema.set('toObject', {
   transform: (doc, rtn) => omit(rtn, ['_id'])
 });
 
+@injectable()
 export default class UserRepo {
   Model;
 
