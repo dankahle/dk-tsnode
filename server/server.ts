@@ -1,10 +1,11 @@
 import container from './inversify.config';
 import express from 'express';
-import userRouter from './api/user/router';
 import mg from 'mongoose';
 import bodyParser from 'body-parser';
 
 const port = process.env.PORT || 3000;
+const cont = container;
+import userRouter from './api/user/router';
 
 mg.connect('mongodb://localhost:27017/tsnode')
   .then(() => {
