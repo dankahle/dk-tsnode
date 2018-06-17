@@ -9,7 +9,7 @@ export default class UserController {
   }
 
   getMany(req: Request, res, next) {
-    this.repo.getMany(req.query)
+    return this.repo.getMany(req.query)
       .then(items => res.send(items))
       .catch(next);
   }
