@@ -10,4 +10,9 @@ class CustomProcessor extends DisplayProcessor {
 jasmine.getEnv().clearReporters();
 jasmine.getEnv().addReporter(new SpecReporter({
   customProcessors: [CustomProcessor],
+  spec: {
+    displaySuccessful: true,
+    displayPending: false,
+    displayFailed: true,
+  }
 }));

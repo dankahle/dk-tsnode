@@ -1,9 +1,12 @@
-
+import injector from '../../inversify.config';
+import UserController from './controller';
 
 describe('spec tests', (() => {
+  let sut: UserController
 
-  it('ctrl test', () => {
-    expect(true).toBe(false);
+  beforeAll(() => {
+    sut = injector.get(UserController);
+    const i = 5;
   })
 
   it('ctrl test', () => {
@@ -11,4 +14,7 @@ describe('spec tests', (() => {
   })
 
 }))
+
+
+
 

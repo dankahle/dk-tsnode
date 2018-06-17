@@ -9,6 +9,7 @@
     "build-serve": "npm run build && npm run serve",
     "build-test": "npm run build && npm run test",
     "serve": "node dist/server.js",
+    "placeholder": "node $NODE_DEBUG_OPTION somefile",
     "test": "jasmine",
     "lint": "tslint -c tslint.json -p tsconfig.json"
   },

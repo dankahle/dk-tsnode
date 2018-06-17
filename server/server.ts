@@ -1,4 +1,4 @@
-import "reflect-metadata";
+import container from './inversify.config';
 import userRouter from './api/user/router';
 import express from 'express';
 import mg from 'mongoose';
